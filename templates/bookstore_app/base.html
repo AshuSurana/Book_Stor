@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>{%block title %} BOOK SHOP{% endblock title %}</title>
+    
+    
+</head>
+<body style="background-color:powderblue">
+
+    <nav class="navbar navbar-dark bg-dark">
+
+         
+        <div class="container">
+            <a class="navbar-brand" href="#">Online BookStore</a>
+            <a href= "{% url 'index' %}">Home</a>
+                                  
+            <a href="{% url 'books' %}">Books</a>
+            <a href= "{% url 'booksDetailView' %}">Purchase</a>
+            
+            <input type="text" placeholder="Search..">
+            <a href="#">Sign Up</a>
+            <a href="#">Login</a>
+            <a href= "{% url 'admin:index' %}">Admin</a>
+
+           
+        </div>
+    </nav>
+
+    <p uk-margin style="width: 80%; margin: auto; margin-top: 15px;"> 
+        <!-- from context processors, for dynamic generating buttons-->
+        {% for category in categories %}
+        <a href= "{% url 'category_detail' %}"><button style='margin-right:15px'><strong>{{ category.name }}</strong></button></a>
+        {% endfor %}
+    </p>
+    <div class="container"> 
+        {% block body_block %}
+
+        {% endblock %}
+
+    </div>
+    
+</body>
+</html>

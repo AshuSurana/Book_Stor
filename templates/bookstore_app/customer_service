@@ -1,0 +1,13 @@
+{% extends "bookstore_app/base.html "%}
+
+{% block body_block %}
+
+<div class="container">
+    <h3>CALL US</h3>
+    <div class="container">
+        <p>Mon-Sat 9a.m - 7p.m</p>
+        <a class="c-button" href="#">12345678</a>
+    </div>
+</div>
+
+{% endblock %}

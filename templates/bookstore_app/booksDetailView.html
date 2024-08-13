@@ -1,0 +1,20 @@
+{% extends "bookstore_app/base.html "%}
+
+{% block body_block %}
+
+<h1><em>All avilable books :</em></h1><br>
+    <div>
+        {% if book_record %}
+            {% for record in book_record %}
+                 
+                <img src=" {{ record.cover_image.url}}" width="200" height="200" hspace="30" vspace="30" alt="cover_image">  
+               
+                   
+            {% endfor %}
+        {% else %}
+            <p>No Book Found!</p>
+        {% endif %}
+    </div>
+
+
+{% endblock %}

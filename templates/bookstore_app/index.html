@@ -1,0 +1,28 @@
+{% extends "bookstore_app/base.html "%}
+
+{% block body_block %}
+
+<div class="container">
+    <br>
+    <h3>Welcome to my Book Store!</h3><br>
+
+</div>
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="static/images/book1.jpg" width=100% height="236" alt="best_selling_book">
+      </div> 
+    </div>
+    <div class="container">
+        <br><br>
+        <img src="static/images/book2.jpg" width="150" height="150" hspace="20" alt="book2">
+        <img src="static/images/book3.jpg" width="150" height="150" hspace="20" alt="book3">
+        <img src="static/images/kids-books.jpg" width="150" height="150" hspace="20" alt="kids_book">
+        <img src="static/images/python.jpg" width="150" height="150" hspace="20" alt="python_book">
+        <img src="static/images/AI.jpg" width="150" height="150" hspace="20" alt="AI_book">
+
+
+    </div>    
+</div>
+
+{% endblock %}

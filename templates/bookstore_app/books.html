@@ -1,0 +1,28 @@
+{% extends "bookstore_app/base.html "%}
+
+{% block body_block %}
+
+<h1><em>Here you can see list of all the avilable books :</em></h1><br>
+    <div>
+        {% if book_record %}
+            {% for record in book_record %}
+                <ol>
+                    <b></b>Book Info
+                    <ul>
+                        <li><h5>Title: {{ record.title}}<h5></li>
+                        <li><h5>Author: {{ record.author}}<h5></li>
+                        <li><h5>Description: {{ record.description}}<h5></li>
+                        <li><h5>Price: {{ record.price}}</h5></li>
+                        <li><h5>Quantity: {{ record.quantity}}</h5></li> 
+                        <li><img src=" {{ record.cover_image.url}}" width="150" height="150" alt="cover_image"></li>  
+                    </ul>
+                </ol>
+                                   
+            {% endfor %}
+        {% else %}
+            <p>No Book Found!</p>
+        {% endif %}
+    </div>
+
+
+{% endblock %}
